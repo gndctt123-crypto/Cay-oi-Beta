@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a5d994bd38fb4397d66c5f533252a, type: 3}
+  m_Name: WallNutData
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Wall-nut
+  sunCost: 50
+  cooldownTime: 30
+  health: 40
+  damage: 0
+  attackInterval: 0
+  cardIcon: {fileID: 7827511269729275165, guid: 9fbe64bec9ef15c438b81ee4cd64484e, type: 3}
+  plantPrefab: {fileID: 4626842975974270805, guid: 64bb8b9ac28e3cb4d8d8de05f437a5a5, type: 3}

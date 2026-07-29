@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a5d994bd38fb4397d66c5f533252a, type: 3}
+  m_Name: PeashooterData
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Peashooter
+  sunCost: 100
+  cooldownTime: 7.5
+  health: 5
+  damage: 1
+  attackInterval: 1.43
+  cardIcon: {fileID: 7896053586275161293, guid: 6c6ac77bdc33956489cb71b9ad041377, type: 3}
+  plantPrefab: {fileID: 742793274536426299, guid: b5ef09d095b8d2745a4710b2f19af394, type: 3}

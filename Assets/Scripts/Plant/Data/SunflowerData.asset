@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a5d994bd38fb4397d66c5f533252a, type: 3}
+  m_Name: SunflowerData
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Sunflower
+  sunCost: 50
+  cooldownTime: 7.5
+  health: 5
+  damage: 1
+  attackInterval: 24
+  cardIcon: {fileID: -2232523847155048472, guid: 4020aabb4371c9045be400c4e1ff34b6, type: 3}
+  plantPrefab: {fileID: 4081635672985736720, guid: 01242d61544b7f6459d0eb2e296f7139, type: 3}

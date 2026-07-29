@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a5d994bd38fb4397d66c5f533252a, type: 3}
+  m_Name: PotatoMineData
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: PotatoMine
+  sunCost: 25
+  cooldownTime: 30
+  health: 2
+  damage: 1800
+  attackInterval: 1
+  cardIcon: {fileID: -7260355877989377321, guid: 85cc5e0dedbb5984290f7ef69a488457, type: 3}
+  plantPrefab: {fileID: 8611075479300391014, guid: 28f70e79c1afd37439b2d63cc8112e46, type: 3}
