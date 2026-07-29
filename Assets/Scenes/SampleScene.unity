@@ -5054,7 +5054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a9a571ebbe5cf4ea4104ccf21455a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelProgressBar
-  backgroundBar: {fileID: 1414767787}
+  backgroundBar: {fileID: 0}
   fillBar: {fileID: 561361143}
   zombieHead: {fileID: 974558497}
   totalZombies: 10
@@ -5318,7 +5318,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7557c203cd03046b610ce8785ab3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
-  waves: []
+  waves:
+  - normalZombieCount: 8
+    coneheadZombieCount: 1
+    bucketheadZombieCount: 0
+    spawnRate: 5
+    isHugeWave: 0
+  - normalZombieCount: 10
+    coneheadZombieCount: 2
+    bucketheadZombieCount: 2
+    spawnRate: 4
+    isHugeWave: 1
   normalZombiePrefab: {fileID: 0}
   coneheadZombiePrefab: {fileID: 2910201449435490808, guid: a8732da34cefafc458179b5631016dc6, type: 3}
   bucketheadZombiePrefab: {fileID: 2910201449435490808, guid: 7e6c3303f0c51c84cacc92e4c96b4468, type: 3}
