@@ -5319,10 +5319,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   waves:
-  - normalZombieCount: 8
+  - normalZombieCount: 5
     coneheadZombieCount: 1
     bucketheadZombieCount: 0
-    spawnRate: 5
+    spawnRate: 7
     isHugeWave: 0
   - normalZombieCount: 10
     coneheadZombieCount: 2
