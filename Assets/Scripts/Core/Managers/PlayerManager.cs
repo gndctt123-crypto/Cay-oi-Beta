@@ -29,6 +29,22 @@ public class PlayerManager : MonoBehaviour
         OnSunChanged?.Invoke(currentSun);
     }
 
+    private void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        currentSun = 50;
+        OnSunChanged?.Invoke(currentSun);
+    }
+
     public void AddSun(int amount)
     {
         currentSun += amount;

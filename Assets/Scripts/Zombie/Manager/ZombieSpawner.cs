@@ -69,13 +69,14 @@ public class ZombieSpawner : MonoBehaviour
 #endif
         }
 
-        if (waves == null || waves.Length == 0)
-        {
             waves = new Wave[] {
-                new Wave { normalZombieCount = 3, coneheadZombieCount = 1, bucketheadZombieCount = 0, spawnRate = 8f, isHugeWave = false },
-                new Wave { normalZombieCount = 5, coneheadZombieCount = 3, bucketheadZombieCount = 1, spawnRate = 4f, isHugeWave = true }
+                // Đợt 1: 10 con (7 Thường, 3 Nón) - Tăng dần: 1 -> 2 -> 3 -> 4 con
+                new Wave { normalZombieCount = 7, coneheadZombieCount = 3, bucketheadZombieCount = 0, spawnRate = 12f, isHugeWave = false },
+                // Đợt 2: 15 con (10 Thường, 4 Nón, 1 Xô) - Tăng dần: 1 -> 2 -> 3 -> 4 -> 5 con
+                new Wave { normalZombieCount = 10, coneheadZombieCount = 4, bucketheadZombieCount = 1, spawnRate = 14f, isHugeWave = true },
+                // Đợt 3: 21 con (12 Thường, 6 Nón, 3 Xô) - Tăng dần: 1 -> 2 -> 3 -> 4 -> 5 -> 6 con
+                new Wave { normalZombieCount = 12, coneheadZombieCount = 6, bucketheadZombieCount = 3, spawnRate = 14f, isHugeWave = true }
             };
-        }
         
         levelProgressBar = FindAnyObjectByType<LevelProgressBar>();
         if (levelProgressBar != null)
@@ -107,7 +108,6 @@ public class ZombieSpawner : MonoBehaviour
                 yield return new WaitForSeconds(3f);
             }
 
-            isSpawning = true;
             zombiesSpawnedInWave = 0;
 
             // Tạo danh sách zombie cho wave này
@@ -119,20 +119,26 @@ public class ZombieSpawner : MonoBehaviour
             for(int i = 0; i < currentWave.bucketheadZombieCount; i++) 
                 if (bucketheadZombiePrefab != null) zombiesToSpawn.Add(bucketheadZombiePrefab);
             
-            // Xáo trộn ngẫu nhiên thứ tự xuất hiện
-            for (int i = 0; i < zombiesToSpawn.Count; i++)
-            {
-                GameObject temp = zombiesToSpawn[i];
-                int randomIndex = Random.Range(i, zombiesToSpawn.Count);
-                zombiesToSpawn[i] = zombiesToSpawn[randomIndex];
-                zombiesToSpawn[randomIndex] = temp;
-            }
+            // Xóa phần xáo trộn ngẫu nhiên để giữ nguyên thứ tự chất lượng tăng dần (Thường -> Nón -> Xô)
 
-            // Bắt đầu spawn
-            foreach(GameObject prefab in zombiesToSpawn)
+            // Bắt đầu spawn theo nhóm tăng dần (1 con -> 2 con -> 3 con...)
+            int groupSize = 1;
+            int currentIndex = 0;
+            
+            while (currentIndex < zombiesToSpawn.Count)
             {
-                SpawnZombie(prefab);
-                zombiesSpawnedInWave++;
+                // Spawn 1 đợt nhỏ gồm 'groupSize' zombie cùng lúc
+                for (int i = 0; i < groupSize; i++)
+                {
+                    if (currentIndex < zombiesToSpawn.Count)
+                    {
+                        SpawnZombie(zombiesToSpawn[currentIndex]);
+                        zombiesSpawnedInWave++;
+                        currentIndex++;
+                    }
+                }
+                
+                groupSize++; // Lần sau sẽ xuất hiện nhiều zombie hơn cùng lúc
                 yield return new WaitForSeconds(currentWave.spawnRate);
             }
 
