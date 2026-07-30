@@ -26,7 +26,6 @@ public class ZombieSpawner : MonoBehaviour
     private int currentWaveIndex = 0;
     private int zombiesSpawnedInWave = 0;
     private int activeZombies = 0;
-    private bool isSpawning = false;
     
     public delegate void LevelProgressAction(float progress);
     public event LevelProgressAction OnProgressChanged;
@@ -39,7 +38,7 @@ public class ZombieSpawner : MonoBehaviour
         if (rowPositions == null || rowPositions.Length != GameConstants.GridRows)
         {
             rowPositions = new float[GameConstants.GridRows];
-            MapGrid grid = FindObjectOfType<MapGrid>();
+            MapGrid grid = FindAnyObjectByType<MapGrid>();
             if (grid != null)
             {
                 for (int i = 0; i < GameConstants.GridRows; i++)
@@ -78,7 +77,7 @@ public class ZombieSpawner : MonoBehaviour
             };
         }
         
-        levelProgressBar = FindObjectOfType<LevelProgressBar>();
+        levelProgressBar = FindAnyObjectByType<LevelProgressBar>();
         if (levelProgressBar != null)
         {
             int totalZ = 0;
@@ -136,8 +135,6 @@ public class ZombieSpawner : MonoBehaviour
                 zombiesSpawnedInWave++;
                 yield return new WaitForSeconds(currentWave.spawnRate);
             }
-
-            isSpawning = false;
 
             // Chờ cho đến khi tất cả zombie trong wave bị tiêu diệt
             while (activeZombies > 0)

@@ -11,7 +11,7 @@ public class ShovelTool : MonoBehaviour
     {
         img = GetComponent<Image>();
         btn = GetComponent<Button>();
-        grid = FindObjectOfType<MapGrid>();
+        grid = FindAnyObjectByType<MapGrid>();
 
         if (btn != null)
         {

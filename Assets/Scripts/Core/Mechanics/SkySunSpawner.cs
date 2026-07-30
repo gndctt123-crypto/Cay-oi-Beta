@@ -11,7 +11,7 @@ public class SkySunSpawner : MonoBehaviour
 
     void Start()
     {
-        grid = FindObjectOfType<MapGrid>();
+        grid = FindAnyObjectByType<MapGrid>();
         if (sunPrefab == null)
         {
 #if UNITY_EDITOR

@@ -25,6 +25,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        currentSun = 50;
         OnSunChanged?.Invoke(currentSun);
     }
 
