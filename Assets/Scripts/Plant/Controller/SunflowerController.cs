@@ -43,6 +43,7 @@ public class SunflowerController : BasePlantController
             SunPickup sunPickup = sunObj.GetComponent<SunPickup>();
             if (sunPickup != null)
             {
+                sunPickup.sunValue = 50;
                 // Rơi từ vị trí cây đến vị trí dropPos bên dưới
                 sunPickup.SetupDrop(spawnPos, dropPos);
             }
