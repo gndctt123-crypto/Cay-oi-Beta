@@ -71,11 +71,11 @@ public class ZombieSpawner : MonoBehaviour
 
             waves = new Wave[] {
                 // Đợt 1: 10 con (7 Thường, 3 Nón) - Tăng dần: 1 -> 2 -> 3 -> 4 con
-                new Wave { normalZombieCount = 7, coneheadZombieCount = 3, bucketheadZombieCount = 0, spawnRate = 12f, isHugeWave = false },
+                new Wave { normalZombieCount = 7, coneheadZombieCount = 3, bucketheadZombieCount = 0, spawnRate = 24f, isHugeWave = false },
                 // Đợt 2: 15 con (10 Thường, 4 Nón, 1 Xô) - Tăng dần: 1 -> 2 -> 3 -> 4 -> 5 con
-                new Wave { normalZombieCount = 10, coneheadZombieCount = 4, bucketheadZombieCount = 1, spawnRate = 14f, isHugeWave = true },
+                new Wave { normalZombieCount = 10, coneheadZombieCount = 4, bucketheadZombieCount = 1, spawnRate = 28f, isHugeWave = true },
                 // Đợt 3: 21 con (12 Thường, 6 Nón, 3 Xô) - Tăng dần: 1 -> 2 -> 3 -> 4 -> 5 -> 6 con
-                new Wave { normalZombieCount = 12, coneheadZombieCount = 6, bucketheadZombieCount = 3, spawnRate = 14f, isHugeWave = true }
+                new Wave { normalZombieCount = 12, coneheadZombieCount = 6, bucketheadZombieCount = 3, spawnRate = 28f, isHugeWave = true }
             };
         
         levelProgressBar = FindAnyObjectByType<LevelProgressBar>();
