@@ -94,7 +94,7 @@ public class ZombieSpawner : MonoBehaviour
 
     private IEnumerator StartLevel()
     {
-        yield return new WaitForSeconds(5f); // Thời gian chuẩn bị ban đầu
+        yield return new WaitForSeconds(20f); // Thời gian chuẩn bị ban đầu (Tăng lên 20s để người chơi kịp trồng cây)
         
         while (currentWaveIndex < waves.Length)
         {

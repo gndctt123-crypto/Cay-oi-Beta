@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582f09ec0054a834b9d529d6457b31b6, type: 3}
   m_Name: BucketheadZombieData
   m_EditorClassIdentifier: Assembly-CSharp::ZombieData
-  zombieName: 
-  health: 10
+  zombieName: Buckethead Zombie
+  health: 130
   damage: 1
   attackInterval: 1
   walkSpeed: 0.25

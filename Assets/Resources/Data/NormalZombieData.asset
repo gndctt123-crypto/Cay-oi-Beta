@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalZombieData
   m_EditorClassIdentifier: Assembly-CSharp::ZombieData
   zombieName: Normal Zombie
-  health: 10
+  health: 20
   damage: 1
   attackInterval: 1
   walkSpeed: 0.25
