@@ -127,7 +127,7 @@ public class ZombieSpawner : MonoBehaviour
             
             while (currentIndex < zombiesToSpawn.Count)
             {
-                // Spawn 1 đợt nhỏ gồm 'groupSize' zombie cùng lúc
+                // Spawn 1 đợt nhỏ gồm 'groupSize' zombie
                 for (int i = 0; i < groupSize; i++)
                 {
                     if (currentIndex < zombiesToSpawn.Count)
@@ -135,10 +135,14 @@ public class ZombieSpawner : MonoBehaviour
                         SpawnZombie(zombiesToSpawn[currentIndex]);
                         zombiesSpawnedInWave++;
                         currentIndex++;
+                        
+                        // Đợi một chút (2s) giữa các con trong cùng 1 nhóm để chúng không bị đè lên nhau
+                        yield return new WaitForSeconds(2f);
                     }
                 }
                 
-                groupSize++; // Lần sau sẽ xuất hiện nhiều zombie hơn cùng lúc
+                groupSize++; // Lần sau sẽ xuất hiện nhiều zombie hơn
+                // Đợi thời gian dài giữa các nhóm (thời gian của đợt)
                 yield return new WaitForSeconds(currentWave.spawnRate);
             }
 

@@ -5815,15 +5815,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   waves:
-  - normalZombieCount: 5
-    coneheadZombieCount: 1
+  - normalZombieCount: 7
+    coneheadZombieCount: 3
     bucketheadZombieCount: 0
-    spawnRate: 7
+    spawnRate: 24
     isHugeWave: 0
   - normalZombieCount: 10
-    coneheadZombieCount: 2
-    bucketheadZombieCount: 2
-    spawnRate: 4
+    coneheadZombieCount: 4
+    bucketheadZombieCount: 1
+    spawnRate: 28
+    isHugeWave: 1
+  - normalZombieCount: 12
+    coneheadZombieCount: 6
+    bucketheadZombieCount: 3
+    spawnRate: 28
     isHugeWave: 1
   normalZombiePrefab: {fileID: 2910201449435490808, guid: 04369bb9e59242949aba2badbe90a663, type: 3}
   coneheadZombiePrefab: {fileID: 2910201449435490808, guid: a8732da34cefafc458179b5631016dc6, type: 3}
