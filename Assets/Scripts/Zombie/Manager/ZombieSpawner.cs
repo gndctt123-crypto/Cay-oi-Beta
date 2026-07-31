@@ -21,7 +21,7 @@ public class ZombieSpawner : MonoBehaviour
     
     // Tọa độ Y tương ứng với 5 hàng ngang
     public float[] rowPositions;
-    public float spawnX = 10f; // Ranh giới đường phố bên phải
+    public float spawnX = 8.5f; // Ranh giới đường phố bên phải (Dịch sang trái một chút)
 
     private int currentWaveIndex = 0;
     private int zombiesSpawnedInWave = 0;
