@@ -5834,7 +5834,7 @@ MonoBehaviour:
   coneheadZombiePrefab: {fileID: 2910201449435490808, guid: a8732da34cefafc458179b5631016dc6, type: 3}
   bucketheadZombiePrefab: {fileID: 2910201449435490808, guid: 7e6c3303f0c51c84cacc92e4c96b4468, type: 3}
   rowPositions: []
-  spawnX: 8.5
+  spawnX: 7.5
 --- !u!4 &1359643654
 Transform:
   m_ObjectHideFlags: 0
