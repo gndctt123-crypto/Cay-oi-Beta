@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 
 public class LevelIntroManager : MonoBehaviour
 {
-    public TextMeshProUGUI introText;
+    public Image introImage;
+    public Sprite[] introSprites; // Mảng chứa các ảnh "Ready", "Set", "Plant"
+    
     public float panStartX = 5f;
     public float panEndX = 0f;
     public float viewTime = 2f;
@@ -29,8 +31,12 @@ public class LevelIntroManager : MonoBehaviour
         camPos.x = panStartX;
         mainCamera.transform.position = camPos;
         
-        // Đảm bảo Text rỗng lúc đầu
-        if (introText != null) introText.text = "";
+        // Đảm bảo Image rỗng lúc đầu
+        if (introImage != null) 
+        {
+            introImage.sprite = null;
+            introImage.color = new Color(1, 1, 1, 0); // Trong suốt
+        }
 
         // 2. Chờ 2 giây để người chơi nhìn
         yield return new WaitForSeconds(viewTime);
@@ -53,21 +59,23 @@ public class LevelIntroManager : MonoBehaviour
         camPos.x = panEndX;
         mainCamera.transform.position = camPos;
 
-        // 4. Hiển thị chữ ""Ready... Set... PLANT!""
-        if (introText != null)
+        // 4. Hiển thị chữ ""Ready... Set... PLANT!"" bằng hình ảnh
+        if (introImage != null && introSprites != null && introSprites.Length > 0)
         {
-            introText.color = Color.red;
-            introText.text = "READY...";
-            yield return StartCoroutine(AnimateTextScale(introText.transform));
-
-            introText.text = "SET...";
-            yield return StartCoroutine(AnimateTextScale(introText.transform));
-
-            introText.text = "PLANT!";
-            yield return StartCoroutine(AnimateTextScale(introText.transform));
+            introImage.color = Color.white; // Hiện lên
+            
+            foreach (Sprite spr in introSprites)
+            {
+                if (spr != null)
+                {
+                    introImage.sprite = spr;
+                    yield return StartCoroutine(AnimateTextScale(introImage.transform));
+                }
+            }
             
             // Xóa chữ
-            introText.text = "";
+            introImage.color = new Color(1, 1, 1, 0);
+            introImage.sprite = null;
         }
     }
 
